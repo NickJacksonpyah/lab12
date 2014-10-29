@@ -21,14 +21,21 @@ class MyApp:
 		self.button1.configure(text="OK", background= "green")
 		self.button1.pack(side=LEFT)	
 		self.button1.bind("<Button-1>", self.button1Click) ### (1)
+		
+		self.button2 = Button(self.myContainer1)
+		self.button2.configure(text="cancel", background= "red")
+		self.button2.pack(side=LEFT)	
+		self.button2.bind("<Button-2>", self.button1Click) ### (2)
 
 		
 	def button1Click(self, event):    ### (3)
 		if self.button1["background"] == "green": ### (4)
-			self.button1["background"] = "yellow"
+			self.button1["background"] = "red"
 		else:
-			self.button1["background"] = "green"
-	
+			self.button1["background"] = "blue"
+			
+		
+		
 		
 root = Tk()
 myapp = MyApp(root)
